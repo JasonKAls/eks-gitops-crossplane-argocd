@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: reacttest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reacttest
+  template:
+    metadata:
+      labels:
+        app: reacttest 
+    spec:
+      containers:
+        - name: reacttest 
+          image: jasonkals.azurecr.io/reacttest
+          ports:
+          - containerPort: 8080
